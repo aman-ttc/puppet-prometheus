@@ -16,7 +16,7 @@ class prometheus::run_service {
       name       => $init_selector,
       enable     => $prometheus::service_enable,
       hasrestart => true,
-      restart    => '/usr/sbin/service prometheus reload',
+      restart    => '/usr/bin/pkill -HUP prometheus',
     }
   }
 }
